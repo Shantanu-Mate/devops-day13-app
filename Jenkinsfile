@@ -6,7 +6,7 @@ pipeline {
     }
     stage('Build Docker Image') {
       steps {
-        bat 'Docker build -t Devops-Day13-app .'
+        bat 'Docker build -t devops-day13-app .'
       }
     }
     stage('Run Container') {
