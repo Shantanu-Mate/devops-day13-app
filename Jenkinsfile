@@ -13,8 +13,6 @@ pipeline {
     }
     stage('Test Container') {
       steps { 
-        bat 'docker stop devops-day13-app container || exit 0 '
-        bat 'docker remove devops-day13-app container || exit 0'
         bat 'docker run -d -p 8085:80 devops-day13-app'
       }
     }
