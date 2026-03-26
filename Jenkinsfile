@@ -16,7 +16,7 @@ pipeline {
         bat 'docker build -t %IMAGE_NAME%:%VERSION% .'
       }
     }
-    stage('To stop old Container') {
+    #stage('To stop old Container') {
       steps { 
         bat 'docker stop %CONTAINER_NAME% || exit 0'
         bat 'docker rm %CONTAINER_NAME% || exit 0'
