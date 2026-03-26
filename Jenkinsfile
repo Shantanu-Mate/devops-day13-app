@@ -3,7 +3,7 @@ pipeline {
   environment {
     IMAGE_NAME = "devops-day13-app"
     VERSION = "v2"
-    CONTAINER_NAME = "devops-day13-app ."
+    CCONTAINER_NAME = "devops-day13-app ."
   }
   stages {
     stage ('Clone Code') {
