@@ -1,5 +1,10 @@
 pipeline {
   agent any 
+  environment {
+    IMAGE_NAME = "devops-day13-app ."
+    VERSION = "v1"
+    CCONTAINER_NAME = "devops-day13-container"
+  }
   stages {
     stage ('Clone Code') {
       steps{
@@ -8,12 +13,14 @@ pipeline {
     }
     stage ('Build Docker Image') {
       steps{
-        bat 'docker build --no-cache -t devops-day13-app .'
+        bat 'docker build --no-cache -t %IMAGE_NAME%:%VERSION% .'
       }
     }
     stage('Test Container') {
       steps { 
-        bat 'docker run -d -p 8085:80 devops-day13-app'
+        bat 'docker stop %CONTAINER_NAME% || exit 0'
+        bat 'docker rm %CONTAINER_NAME% || exit 0'
+        bat 'docker run -d -p 8085:80 %CONTAINER_NAME% %IMAGE_NAME%:%VERSION%'
       }
     }
     stage('Verify Running Container') {
