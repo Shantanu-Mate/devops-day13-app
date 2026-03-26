@@ -13,6 +13,7 @@ pipeline {
     }
     stage ('Stop Old Container') {
       steps{
+        bat 'docker ps -a'
         bat 'docker stop %CONTAINER_NAME% || exit 0'
         bat 'docker rm %CONTAINER_NAME% || exit 0'
       }
