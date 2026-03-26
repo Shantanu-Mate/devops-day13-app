@@ -13,7 +13,7 @@ pipeline {
     }
     stage ('Stop Old Container') {
       steps{
-        bat 'docker stop devops-day13-app . || exit 0'
+        bat 'docker stop %CONTAINER_NAME% || exit 0'
         bat 'docker rm devops-day13-app . || exit 0'
       }
     }
