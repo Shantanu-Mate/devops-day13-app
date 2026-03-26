@@ -2,7 +2,7 @@ pipeline {
   agent any 
   environment {
     IMAGE_NAME = "devops-day13-app"
-    VERSION = "v2"
+    VERSION = "v3"
     CCONTAINER_NAME = "devops-day13-app ."
   }
   stages {
