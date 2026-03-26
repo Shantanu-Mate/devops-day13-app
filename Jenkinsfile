@@ -13,7 +13,7 @@ pipeline {
     }
     stage ('Build Docker Image') {
       steps{
-        bat 'docker build --no-cache -t %IMAGE_NAME%:%VERSION% .'
+        bat 'docker build -t %IMAGE_NAME%:%VERSION% .'
       }
     }
     stage('Test Container') {
