@@ -1,9 +1,9 @@
 pipeline {
   agent any 
   environment {
-    IMAGE_NAME = "devops-day13-app ."
+    IMAGE_NAME = "devops-day13-app"
     VERSION = "v1"
-    CCONTAINER_NAME = "devops-day13-app"
+    CCONTAINER_NAME = "devops-day13-app ."
   }
   stages {
     stage ('Clone Code') {
